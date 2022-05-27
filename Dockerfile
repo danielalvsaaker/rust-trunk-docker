@@ -1,2 +1,2 @@
-FROM rust:latest
-RUN cargo install --locked trunk
+FROM rust:alpine
+RUN cargo install --locked trunk && cargo clean
