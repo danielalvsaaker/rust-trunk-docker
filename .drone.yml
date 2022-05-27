@@ -1,0 +1,19 @@
+---
+kind: pipeline
+name: publish
+
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: danielalvsaaker/rust-trunk-docker
+    tags: latest
+---
+kind: signature
+hmac: 01ade42037f9465af3eb853a3412d31038fd09af6fb6757a1b28be6ab4511b20
+
+...
